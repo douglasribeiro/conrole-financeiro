@@ -23,7 +23,7 @@ public class PagarController extends BaseController<PagarDTO,	PagarService>{
 	
 	@GetMapping("/on")
 	public String estaOn() {
-		log.info("O serviço de pagar esra on.");
+		log.info("O serviço de pagar esta on.");
 		return "Serviço esta no ar.";
 	}
 }

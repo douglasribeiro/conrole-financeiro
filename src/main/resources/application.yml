@@ -1,8 +1,13 @@
 server:
   port: 8081
+app:
+  security:
+    allow-anonymous-options: true # Mude para false para desligar
 spring:
   profiles:
-    active: dev
+    active: prod
+    # active: prod - ativa o keycloak
+    # active: dev - desliga o keycloak
   security:
     oauth2:
       resourceserver:

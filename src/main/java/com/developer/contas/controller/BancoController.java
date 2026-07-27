@@ -26,4 +26,6 @@ public class BancoController extends BaseController<BancoDTO,	BancoService>{
 		log.info("O serviço de Banco esta no ar.");
 		return "Serviço de banco esta no ar.";
 	}
+	
+	//teste configuração sourcetree
 }

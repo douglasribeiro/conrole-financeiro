@@ -1,10 +1,12 @@
 package com.developer.contas.entity;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -48,10 +50,26 @@ public class Banco  extends BaseEntity{
 	
 	private BigDecimal saldo;
 	
-	private LocalDateTime atualizado;
-	
-	private BigDecimal limite;	
-	
+	private BigDecimal limite;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dtAbertura;
+
+	@Column(length = 10, nullable = false)
+	private String nuAgencia;
+
+	@Column(length = 15, nullable = false, unique = true)
+	private String nuConta;
+
+	@Column(length = 35)
+	private String noGerente;
+
+	@Column(length = 50)
+	private String endereco;
+
+	@Column(length = 20)
+	private String telefone;
+
 	@JsonManagedReference
 	@OneToMany(mappedBy = "banco", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -61,7 +79,13 @@ public class Banco  extends BaseEntity{
 		this.id = bancoDTO.getId();
 		this.nome = bancoDTO.getNome();
 		this.saldo = bancoDTO.getSaldo();
-		this.atualizado = bancoDTO.getAtualizado();
+		this.dtAbertura = bancoDTO.getDtAbertura();
 		this.limite = bancoDTO.getLimite();
+		this.movimentacoes = bancoDTO.getMovimentacoes();
+		this.nuAgencia = bancoDTO.getNuAgencia();
+		this.nuConta = bancoDTO.getNuConta();
+		this.noGerente = bancoDTO.getNoGerente();
+		this.endereco = bancoDTO.getEndereco();
+		this.telefone = bancoDTO.getTelefone();
 	}
 }

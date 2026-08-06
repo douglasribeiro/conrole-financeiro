@@ -3,7 +3,7 @@ package com.developer.contas.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.developer.contas.entity.Compra;
+import com.developer.contas.entity.primario.Compra;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

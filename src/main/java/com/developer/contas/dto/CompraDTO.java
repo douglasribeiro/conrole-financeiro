@@ -3,7 +3,7 @@ package com.developer.contas.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.developer.contas.entity.Cartao;
+import com.developer.contas.entity.primario.Cartao;
 import com.developer.contas.enuns.FormaPagamento;
 
 import lombok.AllArgsConstructor;

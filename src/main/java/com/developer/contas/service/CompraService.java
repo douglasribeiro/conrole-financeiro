@@ -10,19 +10,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.developer.contas.dto.CompraDTO;
-import com.developer.contas.entity.Cartao;
-import com.developer.contas.entity.Compra;
-import com.developer.contas.entity.Transacao;
+import com.developer.contas.entity.primario.Cartao;
+import com.developer.contas.entity.primario.Compra;
+import com.developer.contas.entity.primario.Transacao;
 import com.developer.contas.enuns.FormaPagamento;
 import com.developer.contas.generics.BaseService;
-import com.developer.contas.repository.TransacaoRepository;
+import com.developer.contas.repository.primario.CompraRepository;
+import com.developer.contas.repository.primario.TransacaoRepository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
 @Service
-public class CompraService extends BaseService<Compra, CompraDTO> {
+public class CompraService extends BaseService<Compra, CompraDTO, Long> {
 
 	private static final Logger log = LoggerFactory.getLogger(CompraService.class);
 
@@ -31,8 +32,8 @@ public class CompraService extends BaseService<Compra, CompraDTO> {
 	@PersistenceContext
 	private EntityManager entityManager;
 	 
-	public CompraService(TransacaoRepository transacaoRepository, EntityManager entityManager) {
-		super(Compra.class, CompraDTO.class);
+	public CompraService(TransacaoRepository transacaoRepository, EntityManager entityManager, CompraRepository compraRepository) {
+		super(compraRepository, Compra.class, CompraDTO.class);
 		this.transacaoRepository = transacaoRepository;
 		this.entityManager = entityManager;
 	}

@@ -3,7 +3,7 @@ package com.developer.contas.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import com.developer.contas.entity.Compra;
+import com.developer.contas.entity.primario.Compra;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

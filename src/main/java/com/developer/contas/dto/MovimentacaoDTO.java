@@ -2,8 +2,8 @@ package com.developer.contas.dto;
 
 import java.math.BigDecimal;
 
-import com.developer.contas.entity.Banco;
-import com.developer.contas.entity.Movimentacao;
+import com.developer.contas.entity.primario.Banco;
+import com.developer.contas.entity.primario.Movimentacao;
 import com.developer.contas.enuns.Movimento;
 
 import lombok.AllArgsConstructor;

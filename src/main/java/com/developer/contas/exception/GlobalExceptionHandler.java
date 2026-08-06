@@ -14,7 +14,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.developer.contas.entity.ApiError;
+import com.developer.contas.entity.primario.ApiError;
 import com.developer.contas.generics.ApiResponse;
 
 import jakarta.servlet.http.HttpServletRequest;

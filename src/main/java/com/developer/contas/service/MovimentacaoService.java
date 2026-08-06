@@ -7,17 +7,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.developer.contas.dto.MovimentacaoDTO;
-import com.developer.contas.entity.Banco;
-import com.developer.contas.entity.Movimentacao;
+import com.developer.contas.entity.primario.Banco;
+import com.developer.contas.entity.primario.Movimentacao;
 import com.developer.contas.exception.SaldoInsuficienteException;
 import com.developer.contas.generics.BaseService;
-import com.developer.contas.repository.BancoRepository;
-import com.developer.contas.repository.MovimentacaoRepository;
+import com.developer.contas.repository.primario.BancoRepository;
+import com.developer.contas.repository.primario.MovimentacaoRepository;
 
 import jakarta.transaction.Transactional;
 
 @Service
-public class MovimentacaoService extends BaseService<Movimentacao, MovimentacaoDTO> {
+public class MovimentacaoService extends BaseService<Movimentacao, MovimentacaoDTO, Long> {
 
 	private static final Logger log = LoggerFactory.getLogger(MovimentacaoService.class);
 	
@@ -25,7 +25,7 @@ public class MovimentacaoService extends BaseService<Movimentacao, MovimentacaoD
 	private BancoRepository bancoRepository;
 	
 	public MovimentacaoService(MovimentacaoRepository movimentacaoRepository, BancoRepository bancoRepository) {
-		super(Movimentacao.class, MovimentacaoDTO.class);
+		super(movimentacaoRepository, Movimentacao.class, MovimentacaoDTO.class);
 		this.movimentacaoRepository = movimentacaoRepository;
 		this.bancoRepository = bancoRepository;
 	}

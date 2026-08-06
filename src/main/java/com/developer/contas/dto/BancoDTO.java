@@ -6,9 +6,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.developer.contas.entity.Banco;
-import com.developer.contas.entity.Movimentacao;
-
+import com.developer.contas.entity.primario.Banco;
+import com.developer.contas.entity.primario.Movimentacao;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import jakarta.validation.Valid;
 
-public abstract class BaseController<D, S extends BaseService<?, D>> {
+public abstract class BaseController<D, S extends BaseService<?, D, Long>> {
    
 	@Autowired
     protected S service;

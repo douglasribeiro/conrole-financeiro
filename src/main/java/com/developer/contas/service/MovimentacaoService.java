@@ -2,16 +2,16 @@ package com.developer.contas.service;
 
 import java.util.Optional;
 
+import com.developer.contas.entity.secundario.Banco;
+import com.developer.contas.repository.secundario.BancoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.developer.contas.dto.MovimentacaoDTO;
-import com.developer.contas.entity.primario.Banco;
 import com.developer.contas.entity.primario.Movimentacao;
 import com.developer.contas.exception.SaldoInsuficienteException;
 import com.developer.contas.generics.BaseService;
-import com.developer.contas.repository.primario.BancoRepository;
 import com.developer.contas.repository.primario.MovimentacaoRepository;
 
 import jakarta.transaction.Transactional;
@@ -24,7 +24,7 @@ public class MovimentacaoService extends BaseService<Movimentacao, MovimentacaoD
 	private MovimentacaoRepository movimentacaoRepository;
 	private BancoRepository bancoRepository;
 	
-	public MovimentacaoService(MovimentacaoRepository movimentacaoRepository, BancoRepository bancoRepository) {
+	public MovimentacaoService(BancoRepository movimentacaoRepository, BancoRepository bancoRepository) {
 		super(movimentacaoRepository, Movimentacao.class, MovimentacaoDTO.class);
 		this.movimentacaoRepository = movimentacaoRepository;
 		this.bancoRepository = bancoRepository;

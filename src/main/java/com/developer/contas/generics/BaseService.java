@@ -2,6 +2,10 @@ package com.developer.contas.generics;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.developer.contas.dto.BancoDTO;
+import com.developer.contas.entity.primario.Banco;
+import com.developer.contas.repository.secundario.BancoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,7 +23,7 @@ public abstract class BaseService<E, D, ID> {
     private final Class<D> dtoClass;
 
     // Construtor único que resolve a inicialização de todos os campos obrigatórios
-    protected BaseService(JpaRepository<E, ID> repository, Class<E> entityClass, Class<D> dtoClass) {
+    protected BaseService(BancoRepository repository, Class<Banco> entityClass, Class<BancoDTO> dtoClass) {
         this.repository = repository;
         this.entityClass = entityClass;
         this.dtoClass = dtoClass;

@@ -47,3 +47,4 @@ Thumbs.db
 undo*
 
 *.class
+/db_data/mysql.sock

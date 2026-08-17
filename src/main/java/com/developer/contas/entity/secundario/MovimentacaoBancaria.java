@@ -30,6 +30,8 @@ public class MovimentacaoBancaria {
     @Column(nullable = false)
     private BigDecimal valor;
 
+    private BigDecimal saldo;
+
     @Column(name = "data_movimentacao")
     private LocalDateTime dataMovimentacao = LocalDateTime.now();
 
